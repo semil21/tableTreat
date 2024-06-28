@@ -1,0 +1,43 @@
+user login -> email / password 
+
+create user ->  firstName,lastName,, email, contact, password 
+
+                =>  [ userID ] =  restraunt details  ->  restrauntName, contact,  address, email 
+
+                    => [ restrauntid ]  table [1,2,3,4,5,6] |  
+                    => [ restrauntid ]  menu [category, items]
+
+
+===============================================================
+
+                    => addons 
+
+                    => [ restrauntid ] billing 
+                    => [ restrauntid ] billing 
+
+ **************** Async storage required items ****************
+
+ - user id
+ - restaurant id
+
+
+ **************** Connection diagram ****************
+
+
+   | ------------------> tables
+   |         
+ user -----------------> restaurants
+   |
+   | <-------------------> items         
+   |                      | |
+   |                      | |
+   |-------------------> category
+
+
+activeOrders  : userId | number | items | quantity | total | gst    
+
+
+**************** Items Table ****************
+
+
+tableId -> _id -> _id 
