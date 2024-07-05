@@ -23,8 +23,9 @@ import restrauntRouter from "./routes/restraunt.route";
 import tableRouter from "./routes/table.route";
 import categoryRouter from "./routes/category.route";
 import itemRouter from "./routes/item.route";
-import orderRouter from "./routes/order.route";
 import chedRouter from "./routes/chef.route"
+import orderRouter from "./routes/order.route"
+import billRouter from "./routes/bills.route";
 import notFound from "./middleware/notFound";
 
 app.use("/user", userRouter)
@@ -33,6 +34,7 @@ app.use("/table", tableRouter)
 app.use("/category", categoryRouter)
 app.use("/item", itemRouter)
 app.use("/order", orderRouter)
+app.use("/bill", billRouter)
 app.use("/chef", chedRouter)
 
 

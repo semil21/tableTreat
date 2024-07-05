@@ -1,28 +1,27 @@
+import { timeStamp } from "console";
 import mongoose, { Mongoose, Types } from "mongoose";
 
 const OrderSchema = new mongoose.Schema({
     userId: {
+        // restraurnat id / owner id
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
     tableId: {
+        // restaurant table id
         type: mongoose.Schema.Types.ObjectId,
         ref: "Table"
     },
     customerContact: {
-        type: Number
+        // to be taken at checkout
+        type: Number,
+        default: 0
     },
-    // items: [
-    //     {
-    //         item: { type: mongoose.Schema.Types.ObjectId, ref: "Item" },
-    //         quantity: { type: Number, default: 1 }
-    //     }
-    // ],
     total: {
         type: Number,
         default: 0
     },
-    grendTotal: {
+    grandTotal: {
         type: Number,
         default: 0
     },
@@ -33,8 +32,12 @@ const OrderSchema = new mongoose.Schema({
     isPaid: {
         type: Boolean,
         default: false
+    },
+    paymentMode: {
+        type: String,
+        default: "-"
     }
-})
+}, { timestamps: true })
 
 const Order = mongoose.model("Order", OrderSchema)
 

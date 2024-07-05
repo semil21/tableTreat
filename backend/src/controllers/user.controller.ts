@@ -27,6 +27,8 @@ const postUser = async (req: Request, res: Response) => {
 const userLogin = async (req: Request, res: Response) => {
     const { password, email } = req.body;
 
+    console.log('password -', password)
+    console.log('email-', email)
     try {
         const findUser = await User.findOne({ email: email }).lean()
 
